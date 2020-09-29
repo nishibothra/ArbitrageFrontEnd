@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CcHistoryComponent } from './cc-history/cc-history.component';
 import { CcCalculatorComponent } from './component/cc-calculator/cc-calculator.component';
 import { CcRandomComponent } from './component/cc-random/cc-random.component';
 import { FraCalculatorComponent } from './component/fra-calculator/fra-calculator.component';
 import { FraRandomComponent } from './component/fra-random/fra-random.component';
 import { FxCalculatorComponent } from './component/fx-calculator/fx-calculator.component';
 import { FxRandomComponent } from './component/fx-random/fx-random.component';
-import { HistoryComponent } from './component/history/history.component';
 import { HomeComponent } from './component/home/home.component';
+import { FraHistoryComponent } from './fra-history/fra-history.component';
+import { FxHistoryComponent } from './fx-history/fx-history.component';
 
 const routes: Routes = [
   {
@@ -57,7 +59,17 @@ const routes: Routes = [
     ]
   },
   {
-    path:'history',component:HistoryComponent
+    path:'history', children:[
+      {
+        path:'cc',component:CcHistoryComponent
+      },
+      {
+        path:'fx',component:FxHistoryComponent
+      },
+      {
+        path:'fra',component:FraHistoryComponent
+      }
+    ]
   }
 
 ];

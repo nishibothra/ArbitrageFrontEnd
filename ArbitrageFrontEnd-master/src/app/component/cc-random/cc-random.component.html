@@ -1,56 +1,132 @@
 <div class="container-fluid" style="background-color: #292b2c ;">
+    <!-- Navbar -->
     <div class="row">
-      <h3 style="color: white">Random</h3>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Spot" style="color: black;">Spot Price</label>
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="background-color: dimgray;">Random
+                        Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" RouterLink="/cc/calculator" style="color: white;">Calculator</a>
+                </li>
+            </ul>
+  
+        </div>
+  
+        <!-- Random -->
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Random</h3>
             </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Spot" style="color: black;">3190.0</label>
+            <div class="row g-3">
+  
             </div>
-          </div>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">Futures Price</label>
+  
+            <!-- Stock Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control"
+                        style="color: black;"><b>Stock Amount</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" name="lot_size" style="color:black">{{randomCc['lot_size']}}</label>
+                </div>
             </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">3124.0</label>
+  
+            <!-- Brokerage -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" name="brokerage"
+                        style="color:black">{{randomCc['brokerage']}}</label>
+                </div>
             </div>
-          </div>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">Months</label>
+  
+            <!--  Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{randomCc['bid_spotPrice']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{randomCc['ask_spotPrice']}}</label>
+                </div>
             </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">3</label>
+  
+            <!-- Future Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Futures Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomCc['bid_futurePrice']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomCc['ask_futurePrice']}}</label>
+                </div>
             </div>
-          </div>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">Interest</label>
+  
+            <!-- Interest Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Cost of Funds</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomCc['bid_rfr']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomCc['ask_rfr']}}</label>
+                </div>
             </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control" aria-label="Principal" style="color: black;">3.8</label>
-            </div>
-          </div>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control"  style="color: black;">Arbitrage</label>
-            </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control"  style="color: black;">Possible-Reverse Cash and Carry</label>
-            </div>
-          </div>
-          <div class="row g-1">
-            <div class="col-md-3">
-              <label type="text" class="form-control"  style="color: black;">Profit</label>
-            </div>
-            <div class="col-md-3">
-              <label type="text" class="form-control" style="color: black;">212355.0</label>
-            </div>
-          </div>
-        
 
+  
+            <!-- Arbitrage possiblity check/show-->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Arbitrage Type</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control"
+                        ><b>{{randomCc['arbitrage']}}</b></label>
+                </div>
+            </div>
+
+            <!-- profit -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Profit</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : randomCc['profit']==0,
+                        'green' : randomCc['profit']>0
+                     }"><b>{{randomCc['profit']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-5">
+  
+            </div>
+            <div class="row g-4">
+  
+            </div>
+            <div class="row g-3">
+  
+            </div>
+  
+        </div>
+  
+  
     </div>
-
-</div>
+  
+  
+  
+  </div>

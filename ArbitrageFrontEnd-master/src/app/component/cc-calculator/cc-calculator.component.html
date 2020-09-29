@@ -1,1 +1,147 @@
-<p>cc-calculator works!</p>
+<div class="container-fluid" style="background-color: #292b2c ;">
+    <!--Nav Bar-->
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" RouterLink="/cc/calculator" style="color: white;">Random Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
+                </li>
+            </ul>
+            <!-- Calculator -->
+        </div>
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Calculator</h3>
+            </div>
+            <div class="row g-3">
+  
+            </div>
+            <!-- Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="StockAmount"
+                        style="color: black;"><b>Stock Amount</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
+                        placeholder="Enter the Stock Amount" aria-label="StockAmount">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                    (click)="setValues($event)"><b>Arbitrage</b> </button>
+  
+                </div>
+            </div>
+  
+            <!-- Bid/Ask for Spot Price -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;"><b>Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="bid_spotPrice" [(ngModel)]="Input.bid_spotPrice"
+                        placeholder="Enter bid value for Spot Price" aria-label="Bid For Spot">
+  
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ask_spotPrice" [(ngModel)]="Input.ask_spotPrice"
+                        placeholder="Enter ask value for Spot" aria-label="Ask For Spot">
+                </div>
+            </div>
+  
+            <!-- Bid/Ask for Future Price -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Future"
+                        style="color: black;"><b>Future Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="bid_futurePrice" [(ngModel)]="Input.bid_futurePrice"
+                        placeholder="Enter bid value for Future Price" aria-label="Bid For Spot">
+  
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ask_futurePrice" [(ngModel)]="Input.ask_futurePrice"
+                        placeholder="Enter ask value for Future Price" aria-label="Ask For Futures">
+                </div>
+            </div>
+  
+            <!-- Bid/Ask Interest Rates -->
+            <div class="row g-2">
+  
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Cost of Funds
+                            Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="bid_rfr" [(ngModel)]="Input.bid_rfr"
+                        placeholder="Enter Interest rate for Bid" aria-label="BidRFr">
+  
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ask_rfr" [(ngModel)]="Input.ask_rfr"
+                        placeholder="Enter Interest rate for Ask " aria-label="AskRFr">
+                </div>
+  
+            </div>
+             <!-- Duration -->
+             <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="duration"
+                        style="color: black;"><b>Months</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="duration" [(ngModel)]="Input.duration"
+                        placeholder="Months" aria-label="duration">
+                </div>
+                
+            </div>
+
+            <!-- Brokerage -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
+                        style="color: black;"><b>Transaction cost</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
+                        placeholder="Enter Transaction cost" aria-label="brokerage">
+                </div>
+                
+            </div>
+            
+           
+            
+  
+            <!-- Display Aribtrage  -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Arbitrage"
+                        style="color: black;"><b>Arbitrage Type</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Arbitrage"
+                        style="color:black;"><b>{{result['arbitrage']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Profit"
+                        style="color: black;"><b>Profit</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Profit"
+                        style="color: darkgreen;"><b>{{result['profit']}}</b></label>
+                </div>
+            </div>
+  
+  
+        </div>
+  
+  
+  
+    </div>

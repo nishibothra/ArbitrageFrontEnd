@@ -5,7 +5,7 @@
         "logLevel": "debug",
         "changeOrigin": true,
         "pathRewrite": {
-            "^/apiFx": "http://localhost:8080/fx"
+            "^/apiFx": "http://localhost:8080/arbitrage/fx"
         }
     },
     "/api-fx-result": {
@@ -14,7 +14,7 @@
         "logLevel": "debug",
         "changeOrigin": true,
         "pathRewrite": {
-            "^/api-fx-result": "http://localhost:8080/fx/calculator"
+            "^/api-fx-result": "http://localhost:8080/arbitrage/fx/calculator"
         }
     },
     "/apiFra": {
@@ -23,7 +23,7 @@
         "logLevel": "debug",
         "changeOrigin": true,
         "pathRewrite": {
-            "^/apiFra": "http://localhost:8080/frarbitrage"
+            "^/apiFra": "http://localhost:8080/arbitrage/fra"
         }
     },
     "/api-fra-result": {
@@ -32,7 +32,34 @@
         "logLevel": "debug",
         "changeOrigin": true,
         "pathRewrite": {
-            "^/api-fra-result": "http://localhost:8080/fruserin"
+            "^/api-fra-result": "http://localhost:8080/arbitrage/fra/calculator"
+        }
+    },
+    "/apiCc": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/apiCc": "http://localhost:8080/arbitrage/cac"
+        }
+    },
+    "/api-cc-calculator": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-cc-calculator": "http://localhost:8080/arbitrage/cac/calculator"
+        }
+    },
+    "/api-fx-history": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-fx-history": "http://localhost:8080/arbitrage/fx/history"
         }
     }
 }

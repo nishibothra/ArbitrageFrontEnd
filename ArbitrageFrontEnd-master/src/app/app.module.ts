@@ -11,13 +11,16 @@ import { FraCalculatorComponent } from './component/fra-calculator/fra-calculato
 import { FraRandomComponent } from './component/fra-random/fra-random.component';
 import { FxCalculatorComponent } from './component/fx-calculator/fx-calculator.component';
 import { FxRandomComponent } from './component/fx-random/fx-random.component';
-import { HistoryComponent } from './component/history/history.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForexService } from './service/forex.service';
 import { FormsModule } from '@angular/forms';
 import { FraService } from './service/fra.service';
 import { CommonModule } from '@angular/common';
 import { CashAndCarryService } from './service/cash-and-carry.service';
+import { CcHistoryComponent } from './cc-history/cc-history.component';
+import { FxHistoryComponent } from './fx-history/fx-history.component';
+import { FraHistoryComponent } from './fra-history/fra-history.component';
+import { HistoryService } from './service/history.service';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { CashAndCarryService } from './service/cash-and-carry.service';
     FxCalculatorComponent,
     FraRandomComponent,
     FraCalculatorComponent,
-    HistoryComponent
+    CcHistoryComponent,
+    FxHistoryComponent,
+    FraHistoryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,7 @@ import { CashAndCarryService } from './service/cash-and-carry.service';
     FormsModule,
     CommonModule
   ],
-  providers: [ForexService,FraService,CashAndCarryService],
+  providers: [ForexService,FraService,CashAndCarryService,HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

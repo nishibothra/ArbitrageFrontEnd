@@ -33,14 +33,14 @@ export class FraCalculatorComponent implements OnInit {
   //sets the user input values from the form
   public setValues(event){
     event.preventDefault();
-    this.calcFra.principal=parseFloat(this.Input.principal);
+    this.calcFra.principleAmount=parseFloat(this.Input.principleAmount);
     this.calcFra.transactionCost=parseFloat(this.Input.transactionCost);
-    this.calcFra.sixByTwelveFrAsk=parseFloat(this.Input.sixByTwelveFrAsk);
-    this.calcFra.sixByTwelveFrBid=parseFloat(this.Input.sixByTwelveFrBid);
+    this.calcFra.sixByTwelveFRAsk=parseFloat(this.Input.sixByTwelveFRAsk);
+    this.calcFra.sixBytwelveFRBid=parseFloat(this.Input.sixBytwelveFRBid);
     this.calcFra.sixMonthsSpotAsk=parseFloat(this.Input.sixMonthsSpotAsk);
     this.calcFra.sixMonthsSpotBid=parseFloat(this.Input.sixMonthsSpotBid);
-    this.calcFra.twelveMonthsSpotAsk=parseFloat(this.Input.twelveMonthsSpotAsk);
-    this.calcFra.twelveMonthsSpotBid=parseFloat(this.Input.twelveMonthsSpotBid);
+    this.calcFra.twelveMonthSpotAsk=parseFloat(this.Input.twelveMonthSpotAsk);
+    this.calcFra.twelveMonthSpotBid=parseFloat(this.Input.twelveMonthSpotBid);
     
     //console.log(JSON.stringify(this.calcFx));
 

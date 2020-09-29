@@ -1,1 +1,146 @@
-<p>fra-calculator works!</p>
+<div class="container-fluid" style="background-color: #292b2c ;">
+    <!--Nav Bar-->
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/fx/random" style="color: white;">Random Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
+                </li>
+            </ul>
+            <!-- Calculator -->
+        </div>
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Calculator</h3>
+            </div>
+            <div class="row g-3">
+
+            </div>
+            <!-- Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Principal Amount</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="principleAmount" [(ngModel)]="Input.principleAmount"
+                        placeholder="Enter the principal amount" aria-label="principal">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                        (click)="setValues($event)"><b>Arbitrage</b> </button>
+
+                </div>
+            </div>
+
+
+            <!-- Transaction cost -->
+
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" 
+                        style="color: black;"><b>Transaction Cost</b></label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="transactionCost" [(ngModel)]="Input.transactionCost"
+                        placeholder="Enter the transaction cost" aria-label="principal">
+                </div>
+            </div>
+
+
+            <!-- 6 Months Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" 
+                        style="color: black;"><b>6 Months Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="sixMonthsSpotBid" [(ngModel)]="Input.sixMonthsSpotBid"
+                        placeholder="Enter the Bid price" >
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="sixMonthsSpotAsk" [(ngModel)]="Input.sixMonthsSpotAsk"
+                        placeholder="Enter the Ask price" >
+                </div>
+            </div>
+
+            <!-- 12 Months Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" 
+                        style="color: black;"><b>12 Months Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="twelveMonthSpotBid" [(ngModel)]="Input.twelveMonthSpotBid"
+                        placeholder="Enter the Bid price" >
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="twelveMonthSpotAsk" [(ngModel)]="Input.twelveMonthSpotAsk"
+                        placeholder="Enter the Ask price" >
+                </div>
+            </div>
+
+            <!-- 6/12 Months Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" 
+                        style="color: black;"><b>6/12 Months Forward Rate Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="sixBytwelveFRBid" [(ngModel)]="Input.sixBytwelveFRBid"
+                        placeholder="Enter the Bid price" >
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="sixByTwelveFRAsk" [(ngModel)]="Input.sixByTwelveFRAsk"
+                        placeholder="Enter the Ask price" >
+                </div>
+            </div>
+
+            
+
+        
+
+            <!-- Display Aribtrage  -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" 
+                        style="color: black;"><b>Gain/Loss Long Borrow</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : result['gainLossLongBorrow']<0,
+                        'green' : result['gainLossLongBorrow']>0
+                     }"><b>{{result['gainLossLongBorrow']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" 
+                        style="color: black;"><b>Gain/Loss Long Lend</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : result['gainLossLongBorrow']<0,
+                        'green' : result['gainLossLongBorrow']>0
+                     }"><b>{{result['gainLossLongLend']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-5">
+
+            </div>
+            <div class="row g-4">
+
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>

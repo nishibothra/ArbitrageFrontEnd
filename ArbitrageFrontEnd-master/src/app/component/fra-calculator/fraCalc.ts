@@ -1,10 +1,10 @@
 export class FraCalc{
-    principal:any;
+    principleAmount:any;
     transactionCost:any;
     sixMonthsSpotAsk:any;
     sixMonthsSpotBid:any;
-    twelveMonthsSpotBid:any;
-    twelveMonthsSpotAsk:any;
-    sixByTwelveFrAsk:any;
-    sixByTwelveFrBid:any;
+    twelveMonthSpotBid:any;
+    twelveMonthSpotAsk:any;
+    sixByTwelveFRAsk:any;
+    sixBytwelveFRBid:any;
 }
