@@ -1,0 +1,38 @@
+{
+    "/apiFx": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/apiFx": "http://localhost:8080/fx"
+        }
+    },
+    "/api-fx-result": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-fx-result": "http://localhost:8080/fx/calculator"
+        }
+    },
+    "/apiFra": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/apiFra": "http://localhost:8080/frarbitrage"
+        }
+    },
+    "/api-fra-result": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-fra-result": "http://localhost:8080/fruserin"
+        }
+    }
+}

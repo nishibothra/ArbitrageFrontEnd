@@ -1,0 +1,151 @@
+<div class="container-fluid" style="background-color: #292b2c ;">
+    <!-- Navbar -->
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="background-color: dimgray;">Random
+                        Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fx/calculator" style="color: white;">Calculator</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Random -->
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Random</h3>
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+            <!-- Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Principal Amount</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="principal" [(ngModel)]="Input.principal"
+                        placeholder="Enter the principal amount" aria-label="principal">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                        (click)="getData($event)"><b>Arbitrage</b> </button>
+
+                </div>
+            </div>
+
+            <!-- Bid/Ask EUR -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="BidAskEur"
+                        style="color: black;"><b>Bid/Ask(EUR)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="BidAskEur"
+                        style="color: black;">{{bid_ask['bid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Bid/AskEur"
+                        style="color: black;">{{bid_ask['ask']}}</label>
+                </div>
+            </div>
+
+            <!-- Bid/Ask USD -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Bid/Ask(USD)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{bid_ask3['bid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{bid_ask3['ask']}}</label>
+                </div>
+            </div>
+
+            <!-- interest rates -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;"><b>Interest(Bid/Ask)(EUR)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;">{{int_c1['bid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;">{{int_c1['ask']}}</label>
+                </div>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;"><b>Interest(Bid/Ask)(USD)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;">{{int_c2['bid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;">{{int_c2['ask']}}</label>
+                </div>
+            </div>
+
+            <!-- Arbitrage -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Arbitrage</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;">{{res['result']}}</label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Profit</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: darkgreen;"><b>{{res['fx_p_l']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Choice</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;">{{res['choice']}}</label>
+                </div>
+            </div>
+            <div class="row g-5">
+
+            </div>
+            <div class="row g-4">
+
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</div>

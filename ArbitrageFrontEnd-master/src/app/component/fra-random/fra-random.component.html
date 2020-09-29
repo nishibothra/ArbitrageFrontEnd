@@ -1,0 +1,133 @@
+<div class="container-fluid" style="background-color: #292b2c ;">
+    <!-- Navbar -->
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="background-color: dimgray;">Random
+                        Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fra/calculator" style="color: white;">Calculator</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Random -->
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Random</h3>
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+            <!-- Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" 
+                        style="color: black;"><b>Principal Amount</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" name="principal" style="color:black">{{randomFra['principleAmount']}}</label>
+                </div>
+            </div>
+
+            <!-- Transaction Cost -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" name="principal"
+                        style="color:black">{{randomFra['transactionCost']}}</label>
+                </div>
+            </div>
+
+            <!-- 6 Months Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>6 Months Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{randomFra['sixMonthsSpotBid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;">{{randomFra['sixMonthsSpotAsk']}}</label>
+                </div>
+            </div>
+
+            <!-- 12 Months Spot Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>12 Months Spot Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomFra['twelveMonthSpotBid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomFra['twelveMonthSpotAsk']}}</label>
+                </div>
+            </div>
+
+            <!-- 6/12 Forward Rate Bid/Ask -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>6/12 Forward Rate
+                            Bid/Ask</b></label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomFra['sixBytwelveFRBid']}}</label>
+                </div>
+                <div class="col-md-2">
+                    <label type="text" class="form-control"
+                        style="color: black;">{{randomFra['sixByTwelveFRAsk']}}</label>
+                </div>
+            </div>
+
+            <!-- Gain or Loss Long Borrow -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Gain/Loss Long Borrow</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : randomFra['gainLossLongBorrow']<0,
+                        'green' : randomFra['gainLossLongBorrow']>0
+                     }"
+                        ><b>{{randomFra['gainLossLongBorrow']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" style="color: black;"><b>Gain/Loss Long Lend</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : randomFra['gainLossLongLend']<0,
+                        'green' : randomFra['gainLossLongLend']>0
+                     }"><b>{{randomFra['gainLossLongLend']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-5">
+
+            </div>
+            <div class="row g-4">
+
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>

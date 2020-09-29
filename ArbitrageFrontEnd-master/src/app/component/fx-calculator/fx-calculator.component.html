@@ -1,0 +1,173 @@
+<div class="container-fluid" style="background-color: #292b2c ;">
+    <!--Nav Bar-->
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/fx/random" style="color: white;">Random Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
+                </li>
+            </ul>
+            <!-- Calculator -->
+        </div>
+        <div class="row" style="margin-left: 290px;">
+            <div class="row g-2">
+                <h3 style="color: white">Calculator</h3>
+            </div>
+            <div class="row g-3">
+
+            </div>
+            <!-- Amount -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Principal Amount</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="principal" [(ngModel)]="Input.principal"
+                        placeholder="Enter the principal amount" aria-label="principal">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                        (click)="setValues($event)"><b>Arbitrage</b> </button>
+
+                </div>
+            </div>
+
+
+            <!-- Currency -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Currency"
+                        style="color: black;"><b>Currency</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="c1" [(ngModel)]="Input.c1"
+                        placeholder="Enter the currency1" aria-label="Currency1">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="c2" [(ngModel)]="Input.c2"
+                        placeholder="Enter the currency2" aria-label="Currency2">
+                </div>
+            </div>
+
+            <!-- Bid/Ask for Currency1 -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="BidAskC1"
+                        style="color: black;"><b>Bid/Ask(Currency1)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="bid_c1" [(ngModel)]="Input.bid_c1"
+                        placeholder="Enter bid value" aria-label="BidC1">
+
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ask_c1" [(ngModel)]="Input.ask_c1"
+                        placeholder="Enter ask value" aria-label="Ask1">
+                </div>
+            </div>
+
+            <!-- Bid/Ask for Currency2 -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Spot"
+                        style="color: black;"><b>Bid/Ask(Currency2)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="bid_c2" [(ngModel)]="Input.bid_c2" placeholder="Enter bid value"
+                        aria-label="BidC2">
+            
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ask_c2" [(ngModel)]="Input.ask_c2" placeholder="Enter ask value"
+                        aria-label="Ask2">
+                </div>
+            
+            </div>
+
+            <!-- Bid/Ask Interest Rates -->
+            <div class="row g-2">
+
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Interest
+                            Bid/Ask(C1)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="int_bid_c1" [(ngModel)]="Input.int_bid_c1"
+                        placeholder="Enter bid value" aria-label="BidC1">
+
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="int_ask_c1" [(ngModel)]="Input.int_ask_c1"
+                        placeholder="Enter ask value" aria-label="Ask1">
+                </div>
+
+            </div>
+            <div class="row g-2">
+
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Interest
+                            Bid/Ask(C2)</b></label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="int_bid_c2" [(ngModel)]="Input.int_bid_c2"
+                        placeholder="Enter bid value" aria-label="BidC2">
+
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="int_ask_c2" [(ngModel)]="Input.int_ask_c2"
+                        placeholder="Enter ask value" aria-label="Ask2">
+                </div>
+
+            </div>
+
+            <!-- Display Aribtrage  -->
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Arbitrage"
+                        style="color: black;"><b>Arbitrage</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;">{{result['result']}}</label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Profit</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: darkgreen;"><b>{{result['fx_p_l']}}</b></label>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Choice</b></label>
+                </div>
+                <div class="col-md-4">
+                    <label type="text" class="form-control" aria-label="Principal"
+                        style="color: black;">{{result['choice']}}</label>
+                </div>
+            </div>
+            <div class="row g-5">
+
+            </div>
+            <div class="row g-4">
+
+            </div>
+            <div class="row g-3">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
