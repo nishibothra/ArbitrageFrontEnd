@@ -44,7 +44,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="BidAskEur"
-                        style="color: black;"><b>Bid/Ask(EUR)</b></label>
+                        style="color: black;"><b>Bid/Ask(EUR/USD) Spot</b></label>
                 </div>
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="BidAskEur"
@@ -59,7 +59,7 @@
             <!-- Bid/Ask USD -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" style="color: black;"><b>Bid/Ask(USD)</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>Bid/Ask(EUR/USD) Forward</b></label>
                 </div>
                 <div class="col-md-2">
                     <label type="text" class="form-control" style="color: black;">{{bid_ask3['bid']}}</label>
@@ -117,8 +117,12 @@
                         style="color: black;"><b>Profit</b></label>
                 </div>
                 <div class="col-md-4">
-                    <label type="text" class="form-control" aria-label="Principal"
-                        style="color: darkgreen;"><b>{{res['fx_p_l']}}</b></label>
+                    <label type="text" class="form-control" [ngClass]="{
+                        'red' : res['fx_p_l']<0,
+                        'green' : res['fx_p_l']>0
+
+                    }"
+                        ><b>{{res['fx_p_l']}}</b></label>
                 </div>
             </div>
             <div class="row g-2">

@@ -61,5 +61,24 @@
         "pathRewrite": {
             "^/api-fx-history": "http://localhost:8080/arbitrage/fx/history"
         }
+    },
+    "/api-fra-history": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-fra-history": "http://localhost:8080/arbitrage/fra/history"
+        }
+    },
+    "/api-cc-history": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-cc-history": "http://localhost:8080/arbitrage/cac/history"
+        }
     }
+
 }

@@ -4,7 +4,7 @@
         <div class="col-md-3">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" RouterLink="/cc/calculator" style="color: white;">Random Data</a>
+                    <a class="nav-link" aria-current="page" routerLink="/cc/calculator" style="color: white;">Random Data</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
@@ -94,7 +94,7 @@
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="duration"
                         style="color: black;"><b>Months</b></label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <input type="text" class="form-control" name="duration" [(ngModel)]="Input.duration"
                         placeholder="Months" aria-label="duration">
                 </div>
@@ -107,7 +107,7 @@
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
                         style="color: black;"><b>Transaction cost</b></label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <input type="text" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
                         placeholder="Enter Transaction cost" aria-label="brokerage">
                 </div>
@@ -131,11 +131,13 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Profit"
-                        style="color: black;"><b>Profit</b></label>
+                        style="color: black;"><b>Profit/Loss</b></label>
                 </div>
                 <div class="col-md-4">
-                    <label type="text" class="form-control" aria-label="Profit"
-                        style="color: darkgreen;"><b>{{result['profit']}}</b></label>
+                <label type="text" class="form-control" aria-label="Profit"[ngClass]="{
+                    'red' : result['profit']<0,
+                    'green' : result['profit']>0
+                }"><b>{{result['profit']}}</b></label>
                 </div>
             </div>
   

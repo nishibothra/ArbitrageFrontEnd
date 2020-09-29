@@ -14,7 +14,6 @@ export class FxHistoryComponent implements OnInit {
 
   result:FxHistory[]=new Array();
   subscription: Subscription;
-  fraService: any;
   displayedColumns: string[] = ['ID', 'EUR/USD Spot Bid', 'EUR/USD Spot Ask', 'EUR/USD Forward Bid', 'EUR/USD Forward Ask', 'EUR Interest Rate Bid','EUR Interest Rate Ask', 'USD Interest Rate Bid','USD Interest Rate Ask','Arbitrage','Profit'];
 
 

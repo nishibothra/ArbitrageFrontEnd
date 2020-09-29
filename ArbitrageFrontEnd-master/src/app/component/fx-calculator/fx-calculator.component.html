@@ -57,7 +57,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="BidAskC1"
-                        style="color: black;"><b>Bid/Ask(Currency1)</b></label>
+                        style="color: black;"><b>Bid/Ask(Spot)</b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control" name="bid_c1" [(ngModel)]="Input.bid_c1"
@@ -74,7 +74,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Spot"
-                        style="color: black;"><b>Bid/Ask(Currency2)</b></label>
+                        style="color: black;"><b>Bid/Ask(Forward)</b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control" name="bid_c2" [(ngModel)]="Input.bid_c2" placeholder="Enter bid value"
@@ -141,8 +141,11 @@
                         style="color: black;"><b>Profit</b></label>
                 </div>
                 <div class="col-md-4">
-                    <label type="text" class="form-control" aria-label="Principal"
-                        style="color: darkgreen;"><b>{{result['fx_p_l']}}</b></label>
+                    <label type="text" class="form-control" [ngModel]="{
+                        'red' : result['fx_p_l']<0,
+                        'green' : result['fx_p_l']>0
+
+                    }"><b>{{result['fx_p_l']}}</b></label>
                 </div>
             </div>
             <div class="row g-2">
