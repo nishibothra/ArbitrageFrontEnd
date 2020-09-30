@@ -1,7 +1,10 @@
 element.style {
     background-color: darkorange;
     padding-left: 16px;
+    text-align: center;
 }
-.navbar {
-    padding-left: 16px;
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+    background-color: #292b2c;
+    text-align: center;
 }

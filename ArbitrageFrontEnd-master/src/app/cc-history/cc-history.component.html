@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let data of result">
+                        <tr *ngFor="let data of result" style="height: 65px;">
                             <td>{{ data.bid_spotPrice}}/{{ data.ask_spotPrice}}</td>
                             <td>{{ data.bid_futurePrice}}/{{ data.ask_futurePrice}}</td>
                             <td>{{ data.duration }}</td>
