@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { HistoryService } from '../service/history.service';
 import { FraHistory } from './fra-history';
 
@@ -23,10 +24,12 @@ export class FraHistoryComponent implements OnInit {
   }
 
   getFraHistory(){
-    this.subscription = this.fraHistoryService.getFraHistory()
-    .subscribe(data=> {
+    this.subscription = timer(0, 15000).pipe(//to refresh the data dynamically
+      switchMap(() =>
+      this.fraHistoryService.getFraHistory())
+    ).subscribe(data=> {
       this.result = data;
-      console.log("Fra History :  "+JSON.stringify(this.result));
+      console.log("Fx History :  "+JSON.stringify(this.result));
       
     });
     

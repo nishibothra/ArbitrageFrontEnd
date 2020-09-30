@@ -1,10 +1,10 @@
-<div class="container-fluid" style="background-color: #292b2c ;">
+<div class="container-fluid" style="background-color: #292b2c ; overflow-x: hidden;">
     <!--Nav Bar-->
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="/cc/calculator" style="color: white;">Random Data</a>
+                    <a class="nav-link" aria-current="page" routerLink="/cc/random" style="color: white;">Random Data</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
@@ -25,15 +25,11 @@
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="StockAmount"
                         style="color: black;"><b>Stock Amount</b></label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <input type="text" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
                         placeholder="Enter the Stock Amount" aria-label="StockAmount">
                 </div>
-                <div class="col-md-1">
-                    <button class="btn btn-light" style="background-color: darkorange;"
-                    (click)="setValues($event)"><b>Arbitrage</b> </button>
-  
-                </div>
+                
             </div>
   
             <!-- Bid/Ask for Spot Price -->
@@ -107,12 +103,20 @@
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
                         style="color: black;"><b>Transaction cost</b></label>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <input type="text" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
-                        placeholder="Enter Transaction cost" aria-label="brokerage">
+                        placeholder="Enter Transaction cost" >
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                    (click)="setValues($event)"><b>Arbitrage</b> </button>
+    
                 </div>
                 
             </div>
+
+
+           
             
            
             

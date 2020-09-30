@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: #292b2c ;">
+<div class="container-fluid" style="background-color: #292b2c ; overflow-x: hidden;">
     <!--Nav Bar-->
     <div class="row">
         <div class="col-md-3">
@@ -19,22 +19,7 @@
             <div class="row g-3">
 
             </div>
-            <!-- Amount -->
-            <div class="row g-2">
-                <div class="col-md-2">
-                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
-                        style="color: black;"><b>Principal Amount</b></label>
-                </div>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="principal" [(ngModel)]="Input.principal"
-                        placeholder="Enter the principal amount" aria-label="principal">
-                </div>
-                <div class="col-md-1">
-                    <button class="btn btn-light" style="background-color: darkorange;"
-                        (click)="setValues($event)"><b>Arbitrage</b> </button>
-
-                </div>
-            </div>
+           
 
 
             <!-- Currency -->
@@ -124,6 +109,23 @@
 
             </div>
 
+             <!-- Amount -->
+             <div class="row g-2">
+                <div class="col-md-2">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;"><b>Principal Amount</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="principal" [(ngModel)]="Input.principal"
+                        placeholder="Enter the principal amount" aria-label="principal">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-light" style="background-color: darkorange;"
+                        (click)="setValues($event)"><b>Arbitrage</b> </button>
+
+                </div>
+            </div>
+
             <!-- Display Aribtrage  -->
             <div class="row g-2">
                 <div class="col-md-2">
@@ -141,7 +143,7 @@
                         style="color: black;"><b>Profit</b></label>
                 </div>
                 <div class="col-md-4">
-                    <label type="text" class="form-control" [ngModel]="{
+                    <label type="text" class="form-control" [ngClass]="{
                         'red' : result['fx_p_l']<0,
                         'green' : result['fx_p_l']>0
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { HistoryService } from '../service/history.service';
 import { CcHistory } from './cc-history';
 
@@ -22,12 +23,16 @@ export class CcHistoryComponent implements OnInit {
   }
 
   getCcHistory(){
-    this.subscription = this.ccHistoryService.getCcHistory()
-    .subscribe(data=> {
+    this.subscription = timer(0, 15000).pipe(//to refresh the data dynamically
+      switchMap(() =>
+      this.ccHistoryService.getCcHistory())
+    ).subscribe(data=> {
       this.result = data;
-      console.log("Cc History :  "+JSON.stringify(this.result));
+      console.log("Fx History :  "+JSON.stringify(this.result));
       
     });
   }
+    
+  
 
 }
