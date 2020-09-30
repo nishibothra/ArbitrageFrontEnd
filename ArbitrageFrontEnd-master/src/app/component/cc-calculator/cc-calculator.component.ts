@@ -35,6 +35,7 @@ export class CcCalculatorComponent implements OnInit {
     this.calcCc.bid_spotPrice=parseFloat(this.Input.bid_spotPrice);
     this.calcCc.ask_spotPrice=parseFloat(this.Input.ask_spotPrice);
     this.calcCc.bid_futurePrice=parseFloat(this.Input.bid_futurePrice);
+    this.calcCc.ask_futurePrice=parseFloat(this.Input.ask_futurePrice);
     this.calcCc.bid_rfr=parseFloat(this.Input.bid_rfr);
     this.calcCc.ask_rfr=parseFloat(this.Input.ask_rfr);
     this.calcCc.lot_size=parseFloat(this.Input.lot_size);
