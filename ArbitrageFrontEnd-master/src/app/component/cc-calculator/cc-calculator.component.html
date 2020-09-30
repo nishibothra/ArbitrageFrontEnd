@@ -23,11 +23,11 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="StockAmount"
-                        style="color: black;"><b>Stock Amount</b></label>
+                        style="color: black;"><b>Stock Amount<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
-                        placeholder="Enter the Stock Amount" aria-label="StockAmount">
+                    <input type="number" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
+                        placeholder="Enter the Stock Amount" aria-label="StockAmount" required>
                 </div>
                 
             </div>
@@ -36,33 +36,45 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Spot"
-                        style="color: black;"><b>Spot Bid/Ask</b></label>
+                        style="color: black;"><b>Spot Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="bid_spotPrice" [(ngModel)]="Input.bid_spotPrice"
+                    <input type="number" class="form-control" name="bid_spotPrice" [(ngModel)]="Input.bid_spotPrice"
                         placeholder="Enter bid value for Spot Price" aria-label="Bid For Spot">
   
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="ask_spotPrice" [(ngModel)]="Input.ask_spotPrice"
+                    <input type="number" class="form-control" name="ask_spotPrice" [(ngModel)]="Input.ask_spotPrice"
                         placeholder="Enter ask value for Spot" aria-label="Ask For Spot">
                 </div>
+                
+                <div *ngIf="Input.ask_spotPrice<=Input.bid_spotPrice" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price should be more than Bid price.</b></p>
+                </div>
+                
+
+
+               
+                
             </div>
   
             <!-- Bid/Ask for Future Price -->
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Future"
-                        style="color: black;"><b>Future Bid/Ask</b></label>
+                        style="color: black;"><b>Future Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="bid_futurePrice" [(ngModel)]="Input.bid_futurePrice"
+                    <input type="number" class="form-control" name="bid_futurePrice" [(ngModel)]="Input.bid_futurePrice"
                         placeholder="Enter bid value for Future Price" aria-label="Bid For Spot">
   
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="ask_futurePrice" [(ngModel)]="Input.ask_futurePrice"
+                    <input type="number" class="form-control" name="ask_futurePrice" [(ngModel)]="Input.ask_futurePrice"
                         placeholder="Enter ask value for Future Price" aria-label="Ask For Futures">
+                </div>
+                <div *ngIf="Input.ask_futurePrice<=Input.bid_futurePrice" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
             </div>
   
@@ -71,16 +83,19 @@
   
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Cost of Funds
-                            Bid/Ask</b></label>
+                            Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="bid_rfr" [(ngModel)]="Input.bid_rfr"
+                    <input type="number" class="form-control" name="bid_rfr" [(ngModel)]="Input.bid_rfr"
                         placeholder="Enter Interest rate for Bid" aria-label="BidRFr">
   
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="ask_rfr" [(ngModel)]="Input.ask_rfr"
+                    <input type="number" class="form-control" name="ask_rfr" [(ngModel)]="Input.ask_rfr"
                         placeholder="Enter Interest rate for Ask " aria-label="AskRFr">
+                </div>
+                <div *ngIf="Input.ask_rfr<=Input.bid_rfr" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
   
             </div>
@@ -88,10 +103,10 @@
              <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="duration"
-                        style="color: black;"><b>Months</b></label>
+                        style="color: black;"><b>Months<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" name="duration" [(ngModel)]="Input.duration"
+                    <input type="number" class="form-control" name="duration" [(ngModel)]="Input.duration"
                         placeholder="Months" aria-label="duration">
                 </div>
                 
@@ -101,10 +116,10 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
-                        style="color: black;"><b>Transaction cost</b></label>
+                        style="color: black;"><b>Transaction cost<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
+                    <input type="number" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
                         placeholder="Enter Transaction cost" >
                 </div>
                 <div class="col-md-1">

@@ -31,20 +31,20 @@ export class CcCalculatorComponent implements OnInit {
   //sets the user input values from the form
   public setValues(event){
     event.preventDefault();
-    this.calcCc.brokerage=parseFloat(this.Input.brokerage);
-    this.calcCc.bid_spotPrice=parseFloat(this.Input.bid_spotPrice);
-    this.calcCc.ask_spotPrice=parseFloat(this.Input.ask_spotPrice);
-    this.calcCc.bid_futurePrice=parseFloat(this.Input.bid_futurePrice);
-    this.calcCc.ask_futurePrice=parseFloat(this.Input.ask_futurePrice);
-    this.calcCc.bid_rfr=parseFloat(this.Input.bid_rfr);
-    this.calcCc.ask_rfr=parseFloat(this.Input.ask_rfr);
-    this.calcCc.lot_size=parseFloat(this.Input.lot_size);
-    this.calcCc.duration= parseFloat(this.Input.duration);
+    this.calcCc = this.Input;
+    if(this.calcCc.brokerage&&this.calcCc.bid_spotPrice&&this.calcCc.ask_spotPrice&&this.calcCc.bid_futurePrice&&this.calcCc.bid_rfr&&this.calcCc.ask_rfr&&this.calcCc.lot_size&&this.calcCc.duration)
+    {
+      this.postUserInput();
+    }
+    else{
+      alert('Please fill all the required fields!');
+    }
+     
     
-    //console.log(JSON.stringify(this.calcFx));
 
 
-    this.postUserInput();
+   
   }
+  
 
 }
