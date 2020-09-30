@@ -14,6 +14,7 @@ export class FraHistoryComponent implements OnInit {
 
   result:FraHistory[]=new Array();
   subscription: Subscription;
+  loading:boolean=true;
   displayedColumns: string[] = ['ID', 'Principal Amount', '6 Months Spot', '12 Months Spot', '6/12 Forward', 'Subtype','Profit'];
 
   constructor(private router: Router,private fraHistoryService:HistoryService) { }
@@ -29,7 +30,7 @@ export class FraHistoryComponent implements OnInit {
       this.fraHistoryService.getFraHistory())
     ).subscribe(data=> {
       this.result = data;
-      console.log("Fx History :  "+JSON.stringify(this.result));
+      this.loading=false;
       
     });
     

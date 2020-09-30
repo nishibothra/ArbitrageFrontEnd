@@ -16,6 +16,8 @@ export class CcRandomComponent implements OnInit {
 
   randomCc: Cc[] = new Array();
   subscription: Subscription;
+  Input:any={};
+  loading:boolean = true;
   ngOnInit(): void {
     this.getRandomCc();
   }
@@ -27,7 +29,7 @@ export class CcRandomComponent implements OnInit {
     this.ccService.getCcRandom())
     ).subscribe(data=>{
       this.randomCc = data;
-      console.log("CC "+JSON.stringify(this.randomCc));
+      this.loading = false;
     });
   
   

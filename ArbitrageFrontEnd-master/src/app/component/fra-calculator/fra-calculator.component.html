@@ -19,82 +19,106 @@
             <div class="row g-3">
 
             </div>
-            
 
 
-           
+
+
 
 
             <!-- 6 Months Spot Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" 
-                        style="color: black;"><b>6 Months Spot Bid/Ask</b></label>
+                    <label type="text" class="form-control"
+                        style="color: black;"><b>6 Months Spot Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="sixMonthsSpotBid" [(ngModel)]="Input.sixMonthsSpotBid"
-                        placeholder="Enter the Bid price" >
+                    <input type="number" class="form-control" name="sixMonthsSpotBid" [(ngModel)]="Input.sixMonthsSpotBid"
+                        placeholder="Enter the Bid price" required>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="sixMonthsSpotAsk" [(ngModel)]="Input.sixMonthsSpotAsk"
-                        placeholder="Enter the Ask price" >
+                    <input type="number" class="form-control" name="sixMonthsSpotAsk" [(ngModel)]="Input.sixMonthsSpotAsk"
+                        placeholder="Enter the Ask price" required >
                 </div>
+                <div *ngIf="Input.sixMonthsSpotAsk<=Input.sixMonthsSpotBid" class="col-md-3" id="alert" role="alert">
+                  <p><b>*Ask price should be more than Bid price.</b></p>
+              </div>
+              <div *ngIf="Input.sixMonthsSpotAsk<0||Input.sixMonthsSpotBid<0" class="col-md-3" id="alert" role="alert">
+                <p><b>*Ask price or Bid price can't be negative</b></p>
+            </div>
             </div>
 
             <!-- 12 Months Spot Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" 
-                        style="color: black;"><b>12 Months Spot Bid/Ask</b></label>
+                    <label type="text" class="form-control"
+                        style="color: black;"><b>12 M Spot Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="twelveMonthSpotBid" [(ngModel)]="Input.twelveMonthSpotBid"
-                        placeholder="Enter the Bid price" >
+                    <input type="number" class="form-control" name="twelveMonthSpotBid" [(ngModel)]="Input.twelveMonthSpotBid"
+                        placeholder="Enter the Bid price" required >
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="twelveMonthSpotAsk" [(ngModel)]="Input.twelveMonthSpotAsk"
-                        placeholder="Enter the Ask price" >
+                    <input type="number" class="form-control" name="twelveMonthSpotAsk" [(ngModel)]="Input.twelveMonthSpotAsk"
+                        placeholder="Enter the Ask price"  required>
                 </div>
+                <div *ngIf="Input.twelveMonthSpotAsk<=Input.twelveMonthSpotBid" class="col-md-3" id="alert" role="alert">
+                  <p><b>*Ask price should be more than Bid price.</b></p>
+              </div>
+              <div *ngIf="Input.twelveMonthSpotAsk<0||Input.twelveMonthSpotBid<0" class="col-md-3" id="alert" role="alert">
+                <p><b>*Ask price or Bid price can't be negative.</b></p>
+            </div>
             </div>
 
             <!-- 6/12 Months Spot Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" 
-                        style="color: black;"><b>6/12 Forward Bid/Ask</b></label>
+                    <label type="text" class="form-control"
+                        style="color: black;"><b>6/12 Forward Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="sixBytwelveFRBid" [(ngModel)]="Input.sixBytwelveFRBid"
-                        placeholder="Enter the Bid price" >
+                    <input type="number" class="form-control" name="sixBytwelveFRBid" [(ngModel)]="Input.sixBytwelveFRBid"
+                        placeholder="Enter the Bid price"  required>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="sixByTwelveFRAsk" [(ngModel)]="Input.sixByTwelveFRAsk"
-                        placeholder="Enter the Ask price" >
+                    <input type="number" class="form-control" name="sixByTwelveFRAsk" [(ngModel)]="Input.sixByTwelveFRAsk"
+                        placeholder="Enter the Ask price"  required>
                 </div>
+                <div *ngIf="Input.sixByTwelveFRAsk<=Input.sixBytwelveFRBid" class="col-md-3" id="alert" role="alert">
+                  <p><b>*Ask price should be more than Bid price.</b></p>
+              </div>
+              <div *ngIf="Input.sixByTwelveFRAsk<0||Input.sixBytwelveFRBid<0" class="col-md-3" id="alert" role="alert">
+                <p><b>*Ask or Bid price can't be negative.</b></p>
+            </div>
             </div>
 
             <!-- Amount -->
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
-                        style="color: black;"><b>Principal Amount</b></label>
+                        style="color: black;"><b>Principal Amount<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" name="principleAmount" [(ngModel)]="Input.principleAmount"
-                        placeholder="Enter the principal amount" aria-label="principal">
+                    <input type="number" class="form-control" name="principleAmount" [(ngModel)]="Input.principleAmount"
+                        placeholder="Enter the principal amount" aria-label="principal" required>
                 </div>
-               
+                <div *ngIf="Input.principleAmount<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Amount price can't be negative.</b></p>
+                </div>
+
             </div>
              <!-- Transaction cost -->
 
              <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" style="background-color: #292b2c ;" class="form-control" 
-                        style="color: black;"><b>Transaction Cost</b></label>
+                    <label type="text" style="background-color: #292b2c ;" class="form-control"
+                        style="color: black;"><b>Transaction Cost<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="transactionCost" [(ngModel)]="Input.transactionCost"
-                        placeholder="Enter the transaction cost" aria-label="principal">
+                    <input type="number" class="form-control" name="transactionCost" [(ngModel)]="Input.transactionCost"
+                        placeholder="Enter the transaction cost" aria-label="principal" required>
+                </div>
+                <div *ngIf="Input.transactionCost<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Transaction cost can't be negative.</b></p>
                 </div>
                 <div class="col-md-1">
                     <button class="btn btn-light" style="background-color: darkorange;"
@@ -103,14 +127,14 @@
                 </div>
             </div>
 
-            
 
-        
+
+
 
             <!-- Display Aribtrage  -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" 
+                    <label type="text" class="form-control"
                         style="color: black;"><b>Gain/Loss Long Borrow</b></label>
                 </div>
                 <div class="col-md-4">
@@ -119,10 +143,16 @@
                         'green' : result['gainLossLongBorrow']>0
                      }"><b>{{result['gainLossLongBorrow']}}</b></label>
                 </div>
+                <div class="col-md-1">
+                    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden"></span>
+                      </div>
+
+                </div>
             </div>
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" 
+                    <label type="text" class="form-control"
                         style="color: black;"><b>Gain/Loss Long Lend</b></label>
                 </div>
                 <div class="col-md-4">

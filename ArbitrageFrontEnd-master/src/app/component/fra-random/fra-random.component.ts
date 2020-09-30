@@ -14,6 +14,7 @@ export class FraRandomComponent implements OnInit {
 
   randomFra: Fra[] = new Array();
   subscription: Subscription;
+  loading:boolean=true;
 
   constructor(private router: Router,private fraService:FraService) { }
 
@@ -29,7 +30,7 @@ export class FraRandomComponent implements OnInit {
         this.fraService.getFraRandom())
       ).subscribe(data=> {
         this.randomFra = data;
-        console.log("Fra "+JSON.stringify(this.randomFra));
+        this.loading=false;
       });
       
       

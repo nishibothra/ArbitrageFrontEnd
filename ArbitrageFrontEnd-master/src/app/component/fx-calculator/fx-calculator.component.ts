@@ -14,6 +14,7 @@ export class FxCalculatorComponent implements OnInit {
   subscription: Subscription;
   Input:any={};
   result:String[]=new Array();
+  loading:boolean=false;
 
   constructor(private router: Router,private fxService:ForexService) { }
 
@@ -25,7 +26,7 @@ export class FxCalculatorComponent implements OnInit {
         this.subscription=this.fxService.getFxCalculatorResult(this.calcFx)
         .subscribe(data=>{
           this.result = data;
-          console.log(this.result);
+          this.loading = false;
         });
 
 
@@ -34,17 +35,24 @@ export class FxCalculatorComponent implements OnInit {
   //sets the user input values from the form
   public setValues(event){
     event.preventDefault();
-    this.calcFx.bid_ask={"bid":parseFloat(this.Input.bid_c1),"ask":parseFloat(this.Input.ask_c1)};
-    this.calcFx.bid_ask_3 = {"bid":parseFloat(this.Input.bid_c2),"ask":parseFloat(this.Input.ask_c2)}
-    this.calcFx.int_c1={"bid":parseFloat(this.Input.int_bid_c1),"ask":parseFloat(this.Input.int_ask_c1)};
-    this.calcFx.int_c2={"bid":parseFloat(this.Input.int_bid_c2),"ask":parseFloat(this.Input.int_ask_c2)};
-    this.calcFx.amount = parseFloat(this.Input.principal);
+    this.calcFx.bid_ask={"bid":this.Input.bid_c1,"ask":this.Input.ask_c1};
+    this.calcFx.bid_ask_3 = {"bid":this.Input.bid_c2,"ask":this.Input.ask_c2}
+    this.calcFx.int_c1={"bid":this.Input.int_bid_c1,"ask":this.Input.int_ask_c1};
+    this.calcFx.int_c2={"bid":this.Input.int_bid_c2,"ask":this.Input.int_ask_c2};
+    this.calcFx.amount = this.Input.principal;
     this.calcFx.c1 = this.Input.c1;
     this.calcFx.c2 = this.Input.c2;
-    //console.log(JSON.stringify(this.calcFx));
+    
+    if(this.calcFx.bid_ask['bid']&&this.calcFx.bid_ask['ask']&&this.calcFx.bid_ask_3['bid']&&this.calcFx.bid_ask_3['ask']
+    &&this.calcFx.int_c1['bid']&&this.calcFx.int_c1['ask']&&this.calcFx.int_c2['bid']&&this.calcFx.int_c2['ask']&&this.calcFx.amount&&
+    this.calcFx.c1&&this.calcFx.c2){
+      this.loading=true;
+      this.postUserInput();
+
+    }
 
 
-    this.postUserInput();
+    
   }
 
 }

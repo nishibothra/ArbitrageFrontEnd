@@ -9,11 +9,13 @@ import { FraCalc } from './fraCalc';
   templateUrl: './fra-calculator.component.html',
   styleUrls: ['./fra-calculator.component.css']
 })
-export class FraCalculatorComponent implements OnInit {
+export class FraCalculatorComponent implements OnInit
+{
 
   calcFra: FraCalc=new FraCalc();
   subscription: Subscription;
   Input:any={};
+  loading:boolean=false;
   result:String[]=new Array();
 
   constructor(private router: Router,private fraService:FraService) { }
@@ -26,29 +28,27 @@ export class FraCalculatorComponent implements OnInit {
     this.subscription=this.fraService.getFxCalculatorResult(this.calcFra)
     .subscribe(data=>{
       this.result = data;
-      console.log(this.result);
+      this.loading=false;
     });
   }
 
   //sets the user input values from the form
   public setValues(event){
     event.preventDefault();
-    this.calcFra.principleAmount=parseFloat(this.Input.principleAmount);
-    this.calcFra.transactionCost=parseFloat(this.Input.transactionCost);
-    this.calcFra.sixByTwelveFRAsk=parseFloat(this.Input.sixByTwelveFRAsk);
-    this.calcFra.sixBytwelveFRBid=parseFloat(this.Input.sixBytwelveFRBid);
-    this.calcFra.sixMonthsSpotAsk=parseFloat(this.Input.sixMonthsSpotAsk);
-    this.calcFra.sixMonthsSpotBid=parseFloat(this.Input.sixMonthsSpotBid);
-    this.calcFra.twelveMonthSpotAsk=parseFloat(this.Input.twelveMonthSpotAsk);
-    this.calcFra.twelveMonthSpotBid=parseFloat(this.Input.twelveMonthSpotBid);
+    this.calcFra=this.Input;
     
-    //console.log(JSON.stringify(this.calcFx));
 
+    if(this.calcFra.principleAmount&&this.calcFra.transactionCost&&
+      this.calcFra.sixByTwelveFRAsk&&this.calcFra.sixBytwelveFRBid&&
+      this.calcFra.sixMonthsSpotAsk&&this.calcFra.sixMonthsSpotBid&&
+      this.calcFra.twelveMonthSpotAsk&&this.calcFra.twelveMonthSpotBid)
+    {
+      this.postUserInput();
+      this.loading=true;
+    }
+    else{
+      alert('Please fill all the required fields!');
+    }
 
-    this.postUserInput();
   }
-
-
-
-
 }

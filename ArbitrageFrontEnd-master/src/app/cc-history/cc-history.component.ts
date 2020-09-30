@@ -11,7 +11,7 @@ import { CcHistory } from './cc-history';
   styleUrls: ['./cc-history.component.css']
 })
 export class CcHistoryComponent implements OnInit {
-
+  loading:boolean=true;
   result:CcHistory[]=new Array();
   subscription: Subscription;
   displayedColumns: string[] = ['Spot Price(Bid/Ask)', 'Forward Price(Bid/Ask)','Duration', 'Forward Rate(Bid/Ask)','Lot Size','Brokerage','Arbitrage','Profit'];
@@ -28,7 +28,7 @@ export class CcHistoryComponent implements OnInit {
       this.ccHistoryService.getCcHistory())
     ).subscribe(data=> {
       this.result = data;
-      console.log("Fx History :  "+JSON.stringify(this.result));
+      this.loading=false;
       
     });
   }

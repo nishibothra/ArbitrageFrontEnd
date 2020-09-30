@@ -30,7 +30,13 @@
                         style="color: black;"><b>Stock Amount</b></label>
                 </div>
                 <div class="col-md-4">
-                    <label type="text" class="form-control" name="lot_size" style="color:black">{{randomCc['lot_size']}}</label>
+                    <label type="text" class="form-control"[(ngModel)]="Input.lot_size" name="lot_size" style="color:black">{{randomCc['lot_size']}}</label>
+                </div>
+                <div class="col-md-1">
+                    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden"></span>
+                      </div>
+
                 </div>
             </div>
   

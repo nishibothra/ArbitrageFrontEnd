@@ -21,6 +21,7 @@ export class FxRandomComponent implements OnInit {
   int_c2: String[] = new Array();
   res: String[] = new Array();
   Input:any={};
+  loading:boolean=false;
 
   constructor(private router: Router,private fxService:ForexService) { }
 
@@ -37,7 +38,7 @@ export class FxRandomComponent implements OnInit {
       this.fxService.getFxRandom(this.Input.principal))
     ).subscribe(data=> {
       this.randomFx = data;
-      console.log("Fx "+JSON.stringify(this.randomFx));
+      this.loading=false
       this.res = this.randomFx['res'];
       this.bid_ask = this.randomFx['bid_ask'];
       this.bid_ask3 = this.randomFx['bid_ask_3'];
@@ -51,6 +52,7 @@ export class FxRandomComponent implements OnInit {
   
   public getData(event){
     event.preventDefault();
+    this.loading=true;
     this.getRandomFx();
     
   }

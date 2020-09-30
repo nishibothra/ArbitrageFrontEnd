@@ -15,7 +15,7 @@ export class FxHistoryComponent implements OnInit {
   result:FxHistory[]=new Array();
   subscription: Subscription;
   displayedColumns: string[] = ['ID', 'EUR/USD Spot Bid', 'EUR/USD Spot Ask', 'EUR/USD Forward Bid', 'EUR/USD Forward Ask', 'EUR Interest Rate Bid','EUR Interest Rate Ask', 'USD Interest Rate Bid','USD Interest Rate Ask','Arbitrage','Profit'];
-
+  loading:boolean=true;
 
   constructor(private router: Router,private fxHistoryService:HistoryService) { }
 
@@ -30,7 +30,7 @@ export class FxHistoryComponent implements OnInit {
       this.fxHistoryService.getFxHistory())
     ).subscribe(data=> {
       this.result = data;
-      console.log("Fx History :  "+JSON.stringify(this.result));
+      this.loading=false;
       
     });
     

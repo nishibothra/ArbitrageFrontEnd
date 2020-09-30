@@ -12,7 +12,7 @@
             </ul>
             <!-- Calculator -->
         </div>
-        <div class="row" style="margin-left: 290px;">
+        <div class="row" style="margin-left: 220px;">
             <div class="row g-2">
                 <h3 style="color: white">Calculator</h3>
             </div>
@@ -24,9 +24,9 @@
 
             <!-- Currency -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Currency"
-                        style="color: black;"><b>Currency</b></label>
+                        style="color: black;"><b>Currency<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control" name="c1" [(ngModel)]="Input.c1"
@@ -40,35 +40,47 @@
 
             <!-- Bid/Ask for Currency1 -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="BidAskC1"
-                        style="color: black;"><b>Bid/Ask(Spot)</b></label>
+                        style="color: black;"><b>Spot(Bid/Ask)({{Input.c1}}/{{Input.c2}})<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="bid_c1" [(ngModel)]="Input.bid_c1"
+                    <input type="number" class="form-control" name="bid_c1" [(ngModel)]="Input.bid_c1"
                         placeholder="Enter bid value" aria-label="BidC1">
 
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="ask_c1" [(ngModel)]="Input.ask_c1"
+                    <input type="number" class="form-control" name="ask_c1" [(ngModel)]="Input.ask_c1"
                         placeholder="Enter ask value" aria-label="Ask1">
+                </div>
+                <div *ngIf="Input.ask_c1<=Input.bid_c1" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price should be more than Bid price.</b></p>
+                </div>
+                <div *ngIf="Input.ask_c1<0||Input.bid_c1<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price or Bid price can't be negative.</b></p>
                 </div>
             </div>
 
             <!-- Bid/Ask for Currency2 -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Spot"
-                        style="color: black;"><b>Bid/Ask(Forward)</b></label>
+                        style="color: black;"><b>Forward(Bid/Ask)({{Input.c1}}/{{Input.c2}})<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="bid_c2" [(ngModel)]="Input.bid_c2" placeholder="Enter bid value"
+                    <input type="number" class="form-control" name="bid_c2" [(ngModel)]="Input.bid_c2" placeholder="Enter bid value"
                         aria-label="BidC2">
             
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="ask_c2" [(ngModel)]="Input.ask_c2" placeholder="Enter ask value"
+                    <input type="number" class="form-control" name="ask_c2" [(ngModel)]="Input.ask_c2" placeholder="Enter ask value"
                         aria-label="Ask2">
+                </div>
+                <div *ngIf="Input.ask_c2<=Input.bid_c2" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price should be more than Bid price.</b></p>
+                </div>
+                <div *ngIf="Input.ask_c2<0||Input.bid_c2<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price or Bid price can't be negative.</b></p>
                 </div>
             
             </div>
@@ -76,47 +88,58 @@
             <!-- Bid/Ask Interest Rates -->
             <div class="row g-2">
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Interest
-                            Bid/Ask(C1)</b></label>
+                            Bid/Ask({{Input.c1}})(p.a.)<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="int_bid_c1" [(ngModel)]="Input.int_bid_c1"
+                    <input type="number" class="form-control" name="int_bid_c1" [(ngModel)]="Input.int_bid_c1"
                         placeholder="Enter bid value" aria-label="BidC1">
 
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="int_ask_c1" [(ngModel)]="Input.int_ask_c1"
+                    <input type="number" class="form-control" name="int_ask_c1" [(ngModel)]="Input.int_ask_c1"
                         placeholder="Enter ask value" aria-label="Ask1">
                 </div>
-
+                <div *ngIf="Input.int_ask_c1<=Input.int_bid_c1" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate should be more than Bid rate.</b></p>
+                </div>
+                <div *ngIf="Input.int_ask_c1<0||Input.int_bid_c1<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate and Bid rate can't be negative.</b></p>
+                </div>
             </div>
             <div class="row g-2">
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Interest" style="color: black;"><b>Interest
-                            Bid/Ask(C2)</b></label>
+                            Bid/Ask({{Input.c2}})(p.a.)<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="int_bid_c2" [(ngModel)]="Input.int_bid_c2"
+                    <input type="number" class="form-control" name="int_bid_c2" [(ngModel)]="Input.int_bid_c2"
                         placeholder="Enter bid value" aria-label="BidC2">
 
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" name="int_ask_c2" [(ngModel)]="Input.int_ask_c2"
+                    <input type="number" class="form-control" name="int_ask_c2" [(ngModel)]="Input.int_ask_c2"
                         placeholder="Enter ask value" aria-label="Ask2">
+                </div>
+                <div *ngIf="Input.int_ask_c2<=Input.int_bid_c2" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate should be more than Bid rate.</b></p>
+                </div>
+                <div *ngIf="Input.int_ask_c2<0||Input.int_bid_c2<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate or Bid rate can't be negative.</b></p>
                 </div>
 
             </div>
 
              <!-- Amount -->
              <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
-                        style="color: black;" aria-required="true"><b>Principal Amount</b></label>
+                        style="color: black;" aria-required="true"><b>Principal Amount<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="principal" [(ngModel)]="Input.principal"
+                    <input type="number" class="form-control" name="principal" [(ngModel)]="Input.principal"
                         placeholder="Enter the principal amount" aria-required="true" aria-label="principal" >
                 </div>
                 <div class="col-md-1">
@@ -124,11 +147,14 @@
                         (click)="setValues($event)"><b>Arbitrage</b> </button>
 
                 </div>
+                <div *ngIf="Input.principal<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Amount can't be negative.</b></p>
+                </div>
             </div>
 
             <!-- Display Aribtrage  -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Arbitrage"
                         style="color: black;"><b>Arbitrage</b></label>
                 </div>
@@ -136,11 +162,17 @@
                     <label type="text" class="form-control" aria-label="Principal"
                         style="color: black;">{{result['result']}}</label>
                 </div>
+                <div class="col-md-1">
+                    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden"></span>
+                      </div>
+
+                </div>
             </div>
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Principal"
-                        style="color: black;"><b>Profit</b></label>
+                        style="color: black;"><b>Profit/Loss</b></label>
                 </div>
                 <div class="col-md-4">
                     <label type="text" class="form-control" [ngClass]="{
@@ -151,7 +183,7 @@
                 </div>
             </div>
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control" aria-label="Principal"
                         style="color: black;"><b>Choice</b></label>
                 </div>
