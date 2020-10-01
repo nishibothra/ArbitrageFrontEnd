@@ -4,7 +4,7 @@
         <div class="col-md-3">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/fx/random" style="color: white;">Random Data</a>
+                    <a class="nav-link" aria-current="page" routerLink="/fra/random" style="color: white;">Random Data</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#" style="color: white; background-color: dimgray;">Calculator</a>
@@ -12,7 +12,7 @@
             </ul>
             <!-- Calculator -->
         </div>
-        <div class="row" style="margin-left: 290px;">
+        <div class="row" style="margin-left: 220px;">
             <div class="row g-2">
                 <h3 style="color: white">Calculator</h3>
             </div>
@@ -27,9 +27,9 @@
 
             <!-- 6 Months Spot Bid/Ask -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control"
-                        style="color: black;"><b>6 Months Spot Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>6M Spot Bid/Ask(p.a.)<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="number" class="form-control" name="sixMonthsSpotBid" [(ngModel)]="Input.sixMonthsSpotBid"
@@ -49,9 +49,9 @@
 
             <!-- 12 Months Spot Bid/Ask -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control"
-                        style="color: black;"><b>12 M Spot Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>12M Spot Bid/Ask(p.a.)<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="number" class="form-control" name="twelveMonthSpotBid" [(ngModel)]="Input.twelveMonthSpotBid"
@@ -71,9 +71,9 @@
 
             <!-- 6/12 Months Spot Bid/Ask -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control"
-                        style="color: black;"><b>6/12 Forward Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>6/12 Forward Bid/Ask(p.a.)<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="number" class="form-control" name="sixBytwelveFRBid" [(ngModel)]="Input.sixBytwelveFRBid"
@@ -93,7 +93,7 @@
 
             <!-- Amount -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
                         style="color: black;"><b>Principal Amount<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
@@ -109,7 +109,7 @@
              <!-- Transaction cost -->
 
              <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" style="background-color: #292b2c ;" class="form-control"
                         style="color: black;"><b>Transaction Cost<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
@@ -133,7 +133,7 @@
 
             <!-- Display Aribtrage  -->
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control"
                         style="color: black;"><b>Gain/Loss Long Borrow</b></label>
                 </div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="row g-2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label type="text" class="form-control"
                         style="color: black;"><b>Gain/Loss Long Lend</b></label>
                 </div>
