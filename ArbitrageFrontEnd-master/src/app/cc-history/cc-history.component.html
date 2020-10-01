@@ -10,29 +10,35 @@
                 <div class="row g-2">
                     <h3 style="color: white">Cash and Carry Captured Opportunities</h3>
                 </div>
+
+                <div class="row" style="align-items: center;">
+
+                    <table class="table table-bodered" style="color: white; ">
+                        <thead style="margin-right: 30px;">
+                            <tr>
+                                <th *ngFor = "let column of displayedColumns">
+                                  {{column}}
+                                </th>
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                            <tr *ngFor="let data of result" >
+                                <td>{{ data.bid_spotPrice}}/{{ data.ask_spotPrice}}</td>
+                                <td>{{ data.bid_futurePrice}}/{{ data.ask_futurePrice}}</td>
+                                <td>{{ data.duration }}</td>
+                                <td>{{ data.bid_rfr}}/{{ data.ask_rfr}}</td>
+                                <td>{{ data.lot_size}}</td>
+                                <td>{{ data.brokerage }}</td>
+                                <td>{{ data.arbitrage }}</td>
+                                <td style="background-color: green; color: white;"><b>{{ data.profit|number }}</b></td>
+                              </tr>
+                        </tbody>
+                      </table>
+
+                </div>
     
-                <table class="table table-bodered" style="color: white; margin-left: 20px; ">
-                    <thead style="margin-right: 30px;">
-                        <tr>
-                            <th *ngFor = "let column of displayedColumns">
-                              {{column}}
-                            </th>
-                        </tr>
-                    </thead>
-                   
-                    <tbody>
-                        <tr *ngFor="let data of result" >
-                            <td>{{ data.bid_spotPrice}}/{{ data.ask_spotPrice}}</td>
-                            <td>{{ data.bid_futurePrice}}/{{ data.ask_futurePrice}}</td>
-                            <td>{{ data.duration }}</td>
-                            <td>{{ data.bid_rfr}}/{{ data.ask_rfr}}</td>
-                            <td>{{ data.lot_size}}</td>
-                            <td>{{ data.brokerage }}</td>
-                            <td>{{ data.arbitrage }}</td>
-                            <td style="background-color: green; color: white;"><b>{{ data.profit|number }}</b></td>
-                          </tr>
-                    </tbody>
-                  </table>
+                
     
             </div>
 

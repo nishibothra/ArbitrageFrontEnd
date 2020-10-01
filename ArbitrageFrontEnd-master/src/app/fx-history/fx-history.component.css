@@ -1,11 +1,15 @@
 table.table.table-bodered{
 
     color: white;
-    margin-left: 20px;
     margin-right: 10px;
-    width: 1250px;
+    width: 1314px;
+    margin-left: 75px;
+    margin-top: 75px;
 
 }
 div.container-fluid{
     height:100vh;
+}
+div.row.g-2{
+    text-align: center;
 }
