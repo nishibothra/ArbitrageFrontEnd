@@ -27,7 +27,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control"
-                        style="color: black;"><b>Stock Amount</b></label>
+                        style="color: black;"><b>Quantity</b></label>
                 </div>
                 <div class="col-md-4">
                     <label type="text" class="form-control"[(ngModel)]="Input.lot_size" name="lot_size" style="color:black">{{randomCc['lot_size']}}</label>
@@ -43,7 +43,7 @@
             <!-- Brokerage -->
             <div class="row g-2">
                 <div class="col-md-2">
-                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost(%)</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost(% of spot)</b></label>
                 </div>
                 <div class="col-md-4">
                     <label type="text" class="form-control" name="brokerage"

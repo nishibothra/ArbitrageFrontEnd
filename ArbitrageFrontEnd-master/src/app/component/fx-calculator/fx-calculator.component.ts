@@ -43,13 +43,17 @@ export class FxCalculatorComponent implements OnInit {
     this.calcFx.c1 = this.Input.c1;
     this.calcFx.c2 = this.Input.c2;
     this.calcFx.transCost = this.Input.transCost;
+    this.calcFx.monthsDuration = this.Input.monthsDuration;
     
-    if(this.calcFx.bid_ask['bid']&&this.calcFx.bid_ask['ask']&&this.calcFx.bid_ask_3['bid']&&this.calcFx.bid_ask_3['ask']
-    &&this.calcFx.int_c1['bid']&&this.calcFx.int_c1['ask']&&this.calcFx.int_c2['bid']&&this.calcFx.int_c2['ask']&&this.calcFx.amount&&
-    this.calcFx.c1&&this.calcFx.c2){
+    if(this.calcFx.bid_ask['bid']!=null&&this.calcFx.bid_ask['ask']!=null&&this.calcFx.bid_ask_3['bid']!=null&&this.calcFx.bid_ask_3['ask']
+    !=null&&this.calcFx.int_c1['bid']!=null&&this.calcFx.int_c1['ask']!=null&&this.calcFx.int_c2['bid']!=null&&this.calcFx.int_c2['ask']!=null&&this.calcFx.amount!=null&&
+    this.calcFx.c1!=null&&this.calcFx.c2!=null&&this.calcFx.monthsDuration!=null){
       this.loading=true;
       this.postUserInput();
 
+    }
+    else{
+      alert('Please fill all the required fiels');
     }
 
 

@@ -7,6 +7,7 @@ export class FxCalc{
     c1 : String;
     c2 : String;
     transCost : number;
+    monthsDuration : number;
 
     constructor(){}
 

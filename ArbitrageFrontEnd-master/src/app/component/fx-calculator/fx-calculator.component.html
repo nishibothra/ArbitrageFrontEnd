@@ -37,6 +37,20 @@
                         placeholder="Enter the currency2" aria-label="Currency2">
                 </div>
             </div>
+            <!-- Duration -->
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;" aria-required="true"><b>Duration<span class="nowrap" style="color: red;">*</span></b></label>
+                </div>
+                <div class="col-md-4">
+                    <input type="number" class="form-control" name="monthsDuration" [(ngModel)]="Input.monthsDuration"
+                        placeholder="Enter the duration" aria-required="true" aria-label="principal" >
+                </div>
+                <div *ngIf="Input.principal<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Duration can't be negative.</b></p>
+                </div>
+            </div>
 
             <!-- Bid/Ask for Currency1 -->
             <div class="row g-2">
@@ -53,12 +67,10 @@
                     <input type="number" class="form-control" name="ask_c1" [(ngModel)]="Input.ask_c1"
                         placeholder="Enter ask value" aria-label="Ask1">
                 </div>
-                <div *ngIf="Input.ask_c1<=Input.bid_c1" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price should be more than Bid price.</b></p>
+                <div *ngIf="Input.ask_c1<Input.bid_c1" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate should be more than Bid rate.</b></p>
                 </div>
-                <div *ngIf="Input.ask_c1<0||Input.bid_c1<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price or Bid price can't be negative.</b></p>
-                </div>
+
             </div>
 
             <!-- Bid/Ask for Currency2 -->
@@ -76,11 +88,8 @@
                     <input type="number" class="form-control" name="ask_c2" [(ngModel)]="Input.ask_c2" placeholder="Enter ask value"
                         aria-label="Ask2">
                 </div>
-                <div *ngIf="Input.ask_c2<=Input.bid_c2" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price should be more than Bid price.</b></p>
-                </div>
-                <div *ngIf="Input.ask_c2<0||Input.bid_c2<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price or Bid price can't be negative.</b></p>
+                <div *ngIf="Input.ask_c2<Input.bid_c2" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask rate should be more than Bid rate.</b></p>
                 </div>
             
             </div>
@@ -101,11 +110,8 @@
                     <input type="number" class="form-control" name="int_ask_c1" [(ngModel)]="Input.int_ask_c1"
                         placeholder="Enter ask value" aria-label="Ask1">
                 </div>
-                <div *ngIf="Input.int_ask_c1<=Input.int_bid_c1" class="col-md-3" id="alert" role="alert">
+                <div *ngIf="Input.int_ask_c1<Input.int_bid_c1" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask rate should be more than Bid rate.</b></p>
-                </div>
-                <div *ngIf="Input.int_ask_c1<0||Input.int_bid_c1<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask rate and Bid rate can't be negative.</b></p>
                 </div>
             </div>
             <div class="row g-2">
@@ -123,11 +129,8 @@
                     <input type="number" class="form-control" name="int_ask_c2" [(ngModel)]="Input.int_ask_c2"
                         placeholder="Enter ask value" aria-label="Ask2">
                 </div>
-                <div *ngIf="Input.int_ask_c2<=Input.int_bid_c2" class="col-md-3" id="alert" role="alert">
+                <div *ngIf="Input.int_ask_c2<Input.int_bid_c2" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask rate should be more than Bid rate.</b></p>
-                </div>
-                <div *ngIf="Input.int_ask_c2<0||Input.int_bid_c2<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask rate or Bid rate can't be negative.</b></p>
                 </div>
 
             </div>
@@ -152,7 +155,7 @@
             <div class="row g-2">
                 <div class="col-md-3">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
-                        style="color: black;" aria-required="true"><b>Transaction Cost</b></label>
+                        style="color: black;" aria-required="true"><b>Transaction Cost(% of Amount)</b></label>
                 </div>
                 <div class="col-md-3">
                     <input type="number" class="form-control" name="principal" [(ngModel)]="Input.transCost"

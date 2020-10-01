@@ -32,29 +32,29 @@
                 <div class="col-md-4">
                     <label type="text" class="form-control" name="principal" style="color:black">{{randomFra['principleAmount']}}</label>
                 </div>
+                <div class="col-md-1">
+                    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden"></span>
+                    </div>
+                
+                </div>
             </div>
 
             <!-- Transaction Cost -->
             <div class="row g-2">
                 <div class="col-md-3">
-                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>Transaction Cost(% of Amount)</b></label>
                 </div>
                 <div class="col-md-4">
                     <label type="text" class="form-control" name="principal"
                         style="color:black">{{randomFra['transactionCost']}}</label>
-                </div>
-                <div class="col-md-1">
-                    <div *ngIf="loading" class="spinner-border text-warning" role="status">
-                        <span class="visually-hidden"></span>
-                      </div>
-
                 </div>
             </div>
 
             <!-- 6 Months Spot Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-3">
-                    <label type="text" class="form-control" style="color: black;"><b>6M Spot Bid/Ask(p.a.)</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>6M Spot Bid/Ask(%p.a.)</b></label>
                 </div>
                 <div class="col-md-2">
                     <label type="text" class="form-control" style="color: black;">{{randomFra['sixMonthsSpotBid']}}</label>
@@ -67,7 +67,7 @@
             <!-- 12 Months Spot Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-3">
-                    <label type="text" class="form-control" style="color: black;"><b>12M Spot Bid/Ask(p.a.)</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>12M Spot Bid/Ask(%p.a.)</b></label>
                 </div>
                 <div class="col-md-2">
                     <label type="text" class="form-control"
@@ -82,7 +82,7 @@
             <!-- 6/12 Forward Rate Bid/Ask -->
             <div class="row g-2">
                 <div class="col-md-3">
-                    <label type="text" class="form-control" style="color: black;"><b>6/12 Forward Bid/Ask(p.a)</b></label>
+                    <label type="text" class="form-control" style="color: black;"><b>6/12 Forward Bid/Ask(%p.a)</b></label>
                 </div>
                 <div class="col-md-2">
                     <label type="text" class="form-control"

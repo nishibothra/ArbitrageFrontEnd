@@ -23,11 +23,11 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="StockAmount"
-                        style="color: black;"><b>Stock Amount<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>Quantity<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-4">
-                    <input type="number" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
-                        placeholder="Enter the Stock Amount" aria-label="StockAmount" required>
+                    <input type="number" class="form-control" name="Quantity" [(ngModel)]="Input.lot_size"
+                        placeholder="Enter the Quantity" aria-label="StockAmount" required>
                 </div>
                 <div *ngIf="Input.lot_size<0" class="col-md-3" id="alert" role="alert">
                     <p><b>*Stock amount can't be negative.</b></p>
@@ -51,12 +51,12 @@
                         placeholder="Enter ask value for Spot" aria-label="Ask For Spot">
                 </div>
                 
-                <div *ngIf="Input.ask_spotPrice<=Input.bid_spotPrice" class="col-md-3" id="alert" role="alert">
+                <div *ngIf="Input.ask_spotPrice<Input.bid_spotPrice" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
 
                 <div *ngIf="Input.ask_spotPrice<0||Input.bid_spotPrice<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price or Bid price can't be.</b></p>
+                    <p><b>*Ask price or Bid price can't be negative.</b></p>
                 </div>
                 
 
@@ -82,7 +82,7 @@
                     <input type="number" class="form-control" name="ask_futurePrice" [(ngModel)]="Input.ask_futurePrice"
                         placeholder="Enter ask value for Futures Price" aria-label="Ask For Futures">
                 </div>
-                <div *ngIf="Input.ask_futurePrice<=Input.bid_futurePrice" class="col-md-3" id="alert" role="alert">
+                <div *ngIf="Input.ask_futurePrice<Input.bid_futurePrice" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
                 <div *ngIf="Input.ask_futurePrice<0||Input.bid_futurePrice<0" class="col-md-3" id="alert" role="alert">
@@ -109,9 +109,7 @@
                 <div *ngIf="Input.ask_rfr<=Input.bid_rfr" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
-                <div *ngIf="Input.ask_rfr<0||Input.bid_rfr<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Ask price or Bid price can't be negative.</b></p>
-                </div>
+
   
             </div>
              <!-- Duration -->
@@ -134,7 +132,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
-                        style="color: black;"><b>Transaction cost(%)</b></label>
+                        style="color: black;"><b>Transaction cost(% of spot)</b></label>
                 </div>
                 <div class="col-md-3">
                     <input type="number" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
