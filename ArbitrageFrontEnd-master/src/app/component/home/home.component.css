@@ -27,3 +27,6 @@ div.carousel-inner{
     top: 30px;
     left: 20px;
 }
+div.container-fluid{
+    height: 100vh;
+}

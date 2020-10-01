@@ -1,0 +1,11 @@
+table.table.table-bodered{
+
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 1250px;
+
+}
+div.container-fluid{
+    height:100vh;
+}
