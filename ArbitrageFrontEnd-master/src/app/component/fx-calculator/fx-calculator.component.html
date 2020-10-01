@@ -138,9 +138,25 @@
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
                         style="color: black;" aria-required="true"><b>Principal Amount<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <input type="number" class="form-control" name="principal" [(ngModel)]="Input.principal"
                         placeholder="Enter the principal amount" aria-required="true" aria-label="principal" >
+                </div>
+                <div *ngIf="Input.principal<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Amount can't be negative.</b></p>
+                </div>
+            </div>
+
+            <!-- Transaction Cost -->
+
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="Principal"
+                        style="color: black;" aria-required="true"><b>Transaction Cost</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="form-control" name="principal" [(ngModel)]="Input.transCost"
+                        placeholder="Enter the transaction cost" aria-required="true" aria-label="principal" >
                 </div>
                 <div class="col-md-1">
                     <button class="btn btn-light" style="background-color: darkorange;"
@@ -148,7 +164,7 @@
 
                 </div>
                 <div *ngIf="Input.principal<0" class="col-md-3" id="alert" role="alert">
-                    <p><b>*Amount can't be negative.</b></p>
+                    <p><b>*Transaction cost can't be negative.</b></p>
                 </div>
             </div>
 

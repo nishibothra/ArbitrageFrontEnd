@@ -6,6 +6,7 @@ export class FxCalc{
     amount:number;
     c1 : String;
     c2 : String;
+    transCost : number;
 
     constructor(){}
 

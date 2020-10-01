@@ -42,6 +42,7 @@ export class FxCalculatorComponent implements OnInit {
     this.calcFx.amount = this.Input.principal;
     this.calcFx.c1 = this.Input.c1;
     this.calcFx.c2 = this.Input.c2;
+    this.calcFx.transCost = this.Input.transCost;
     
     if(this.calcFx.bid_ask['bid']&&this.calcFx.bid_ask['ask']&&this.calcFx.bid_ask_3['bid']&&this.calcFx.bid_ask_3['ask']
     &&this.calcFx.int_c1['bid']&&this.calcFx.int_c1['ask']&&this.calcFx.int_c2['bid']&&this.calcFx.int_c2['ask']&&this.calcFx.amount&&
