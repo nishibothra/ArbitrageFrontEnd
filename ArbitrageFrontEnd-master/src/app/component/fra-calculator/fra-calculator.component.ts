@@ -38,7 +38,7 @@ export class FraCalculatorComponent implements OnInit
     this.calcFra=this.Input;
     
 
-    if(this.calcFra.principleAmount&&this.calcFra.transactionCost&&
+    if(this.calcFra.principleAmount&&
       this.calcFra.sixByTwelveFRAsk&&this.calcFra.sixBytwelveFRBid&&
       this.calcFra.sixMonthsSpotAsk&&this.calcFra.sixMonthsSpotBid&&
       this.calcFra.twelveMonthSpotAsk&&this.calcFra.twelveMonthSpotBid)

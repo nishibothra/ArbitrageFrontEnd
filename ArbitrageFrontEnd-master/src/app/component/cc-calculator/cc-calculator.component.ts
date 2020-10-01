@@ -32,7 +32,7 @@ export class CcCalculatorComponent implements OnInit {
   public setValues(event){
     event.preventDefault();
     this.calcCc = this.Input;
-    if(this.calcCc.brokerage&&this.calcCc.bid_spotPrice&&this.calcCc.ask_spotPrice&&this.calcCc.bid_futurePrice&&this.calcCc.bid_rfr&&this.calcCc.ask_rfr&&this.calcCc.lot_size&&this.calcCc.duration)
+    if(this.calcCc.bid_spotPrice&&this.calcCc.ask_spotPrice&&this.calcCc.bid_futurePrice&&this.calcCc.bid_rfr&&this.calcCc.ask_rfr&&this.calcCc.lot_size&&this.calcCc.duration)
     {
       this.postUserInput();
     }

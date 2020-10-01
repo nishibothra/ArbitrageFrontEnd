@@ -29,6 +29,9 @@
                     <input type="number" class="form-control" name="Stock Amount" [(ngModel)]="Input.lot_size"
                         placeholder="Enter the Stock Amount" aria-label="StockAmount" required>
                 </div>
+                <div *ngIf="Input.lot_size<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Stock amount can't be negative.</b></p>
+                </div>
                 
             </div>
   
@@ -51,6 +54,12 @@
                 <div *ngIf="Input.ask_spotPrice<=Input.bid_spotPrice" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
+
+                <div *ngIf="Input.ask_spotPrice<0||Input.bid_spotPrice<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price or Bid price can't be.</b></p>
+                </div>
+                
+
                 
 
 
@@ -76,6 +85,9 @@
                 <div *ngIf="Input.ask_futurePrice<=Input.bid_futurePrice" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
+                <div *ngIf="Input.ask_futurePrice<0||Input.bid_futurePrice<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price or Bid price can't be negative.</b></p>
+                </div>
             </div>
   
             <!-- Bid/Ask Interest Rates -->
@@ -97,6 +109,9 @@
                 <div *ngIf="Input.ask_rfr<=Input.bid_rfr" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
                 </div>
+                <div *ngIf="Input.ask_rfr<0||Input.bid_rfr<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Ask price or Bid price can't be negative.</b></p>
+                </div>
   
             </div>
              <!-- Duration -->
@@ -109,6 +124,9 @@
                     <input type="number" class="form-control" name="duration" [(ngModel)]="Input.duration"
                         placeholder="Months" aria-label="duration">
                 </div>
+                <div *ngIf="Input.duration<0" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Duration can't be negative</b></p>
+                </div>
                 
             </div>
 
@@ -116,7 +134,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
-                        style="color: black;"><b>Transaction cost<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>Transaction cost</b></label>
                 </div>
                 <div class="col-md-3">
                     <input type="number" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
@@ -126,6 +144,9 @@
                     <button class="btn btn-light" style="background-color: darkorange;"
                     (click)="setValues($event)"><b>Arbitrage</b> </button>
     
+                </div>
+                <div *ngIf="Input.transactionCost" class="col-md-3" id="alert" role="alert">
+                    <p><b>*Transaction cost can't be negative</b></p>
                 </div>
                 
             </div>
