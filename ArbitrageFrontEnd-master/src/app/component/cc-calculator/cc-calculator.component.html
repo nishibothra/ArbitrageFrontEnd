@@ -71,16 +71,16 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" class="form-control" aria-label="Future"
-                        style="color: black;"><b>Future Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
+                        style="color: black;"><b>Futures Bid/Ask<span class="nowrap" style="color: red;">*</span></b></label>
                 </div>
                 <div class="col-md-2">
                     <input type="number" class="form-control" name="bid_futurePrice" [(ngModel)]="Input.bid_futurePrice"
-                        placeholder="Enter bid value for Future Price" aria-label="Bid For Spot">
+                        placeholder="Enter bid value for Futures Price" aria-label="Bid For Spot">
   
                 </div>
                 <div class="col-md-2">
                     <input type="number" class="form-control" name="ask_futurePrice" [(ngModel)]="Input.ask_futurePrice"
-                        placeholder="Enter ask value for Future Price" aria-label="Ask For Futures">
+                        placeholder="Enter ask value for Futures Price" aria-label="Ask For Futures">
                 </div>
                 <div *ngIf="Input.ask_futurePrice<=Input.bid_futurePrice" class="col-md-3" id="alert" role="alert">
                     <p><b>*Ask price should be more than Bid price.</b></p>
@@ -134,7 +134,7 @@
             <div class="row g-2">
                 <div class="col-md-2">
                     <label type="text" style="background-color: #292b2c ;" class="form-control" aria-label="brokerage"
-                        style="color: black;"><b>Transaction cost</b></label>
+                        style="color: black;"><b>Transaction cost(%)</b></label>
                 </div>
                 <div class="col-md-3">
                     <input type="number" class="form-control" name="brokerage" [(ngModel)]="Input.brokerage"
