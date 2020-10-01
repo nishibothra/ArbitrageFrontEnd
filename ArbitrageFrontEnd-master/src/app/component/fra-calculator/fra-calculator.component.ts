@@ -38,10 +38,10 @@ export class FraCalculatorComponent implements OnInit
     this.calcFra=this.Input;
     
 
-    if(this.calcFra.principleAmount&&
-      this.calcFra.sixByTwelveFRAsk&&this.calcFra.sixBytwelveFRBid&&
-      this.calcFra.sixMonthsSpotAsk&&this.calcFra.sixMonthsSpotBid&&
-      this.calcFra.twelveMonthSpotAsk&&this.calcFra.twelveMonthSpotBid)
+    if(this.calcFra.principleAmount!=null&&
+      this.calcFra.sixByTwelveFRAsk!=null&&this.calcFra.sixBytwelveFRBid!=null&&
+      this.calcFra.sixMonthsSpotAsk!=null&&this.calcFra.sixMonthsSpotBid!=null&&
+      this.calcFra.twelveMonthSpotAsk!=null&&this.calcFra.twelveMonthSpotBid!=null)
     {
       this.postUserInput();
       this.loading=true;
