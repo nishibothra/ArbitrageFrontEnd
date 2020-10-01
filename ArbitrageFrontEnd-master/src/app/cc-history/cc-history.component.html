@@ -6,12 +6,12 @@
         </div>
         <div col-md-8>
 
-            <div class="row">
+            <div class="row" style="align-items: center;">
                 <div class="row g-2">
                     <h3 style="color: white">Cash and Carry Captured Opportunities</h3>
                 </div>
     
-                <table class="table table-bodered" style="color: white; margin-left: 20px;">
+                <table class="table table-bodered" style="color: white; margin-left: 20px; ">
                     <thead style="margin-right: 30px;">
                         <tr>
                             <th *ngFor = "let column of displayedColumns">
@@ -21,7 +21,7 @@
                     </thead>
                    
                     <tbody>
-                        <tr *ngFor="let data of result" style="height: 65px;">
+                        <tr *ngFor="let data of result" >
                             <td>{{ data.bid_spotPrice}}/{{ data.ask_spotPrice}}</td>
                             <td>{{ data.bid_futurePrice}}/{{ data.ask_futurePrice}}</td>
                             <td>{{ data.duration }}</td>
